@@ -1,10 +1,15 @@
-import Image from "next/image";
-import Heading from "./comps/heading";
+import { ListItem } from "./comps/ListItem";
+import List from "./comps/List";
 
 export default function Home() {
+  const items: Array<string> = ["item 1", "item 2"];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Heading />
-    </div>
+    <>
+      <List type={"unordered"}>
+        {items.map((i) => (
+          <ListItem key={i} item={i} />
+        ))}
+      </List>
+    </>
   );
 }
